@@ -27,6 +27,9 @@ export default function Home() {
   };
 
   const handleExport = () => {
+    if (typeof window === 'undefined') {
+      return;
+    }
     const agendaHtml = `
 <!DOCTYPE html>
 <html lang="en">

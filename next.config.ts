@@ -1,6 +1,9 @@
 import type {NextConfig} from 'next';
 
+const isGithubActions = process.env.GITHUB_ACTIONS === 'true';
+
 const nextConfig: NextConfig = {
+  output: 'export',
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -30,6 +33,10 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  ...(isGithubActions && {
+    basePath: '/agenda',
+    assetPrefix: '/agenda/',
+  }),
 };
 
 export default nextConfig;
