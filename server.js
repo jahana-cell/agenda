@@ -2,7 +2,18 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const port = process.env.PORT || 3000;
+
+// Helper to get the port from command line arguments
+function getPort() {
+  const args = process.argv.slice(2);
+  const portArgIndex = args.indexOf('--port');
+  if (portArgIndex !== -1 && args[portArgIndex + 1]) {
+    return parseInt(args[portArgIndex + 1], 10);
+  }
+  return process.env.PORT || 3000;
+}
+
+const port = getPort();
 
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
@@ -13,5 +24,5 @@ app.get('*', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+  console.log(`Server is running on port ${port}`);
 });
