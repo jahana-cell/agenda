@@ -1,7 +1,280 @@
 # Settings to manage and configure a Firebase App Hosting backend.
 # https://firebase.google.com/docs/app-hosting/configure
-
 runConfig:
-  # Increase this value if you'd like to automatically spin up
-  # more instances in response to increased traffic.
-  maxInstances: 1
+  minInstances: 0
+  maxInstances: 2
+# Required for "next export"
+# staticHeaders:
+# - headers:
+#   - key: "Cross-Origin-Opener-Policy"
+#     value: "same-origin"
+#   - key: "Cross-Origin-Embedder-Policy"
+#     value: "require-corp"
+#   source: "**"
+# i18n:
+#   # The list of locales that the app supports.
+#   locales:
+#   # The default locale to redirect to.
+#   - "en-US"
+#   - "es-US"
+#   - "fr-FR"
+#   # The routing strategy for the locales.
+#   routingStrategy: "PATH"
+#   # The list of cookies to consider when selecting a locale.
+#   localeCookies:
+#   - "my-locale-cookie"
+#   - "another-locale-cookie"
+
+# trailingSlash: true
+# redirects:
+#   - type: 301 # The type of redirect.
+#     source: /firebase
+#     destination: https://firebase.google.com
+# rewrites:
+#   - source: /some/path
+#     destination: /some/other/path
+#   - source: "**"
+#     destination: /index.html
+# headers:
+#   - source: /some/path
+#     headers:
+#       - key: "Access-Control-Allow-Origin"
+#         value: "*"
+#       - key: "Access-Control-Allow-Methods"
+#         value: "GET, POST, OPTIONS"
+#       - key: "Access-Control-Allow-Headers"
+#         value: "Content-Type"
+#       - key: "Access-Control-Max-Age"
+#         value: "3600"
+# liveSsg:
+#   # The number of seconds a page can be cached.
+#   maxCacheAgeSeconds: 300
+#   # The list of glob patterns to match against the paths of the pages to cache.
+#   contentGlobs:
+#     - "/**"
+#   # The list of cookies to consider when caching a page.
+#   cacheKeyCookies:
+#     - "my-cookie"
+#     - "another-cookie"
+#   # The list of query parameters to consider when caching a page.
+#   cacheKeyQueryParameters:
+#     - "my-query-param"
+#     - "another-query-param"
+#   # The list of headers to consider when caching a page.
+#   cacheKeyHeaders:
+#     - "my-header"
+#     - "another-header"
+#   # The list of locales to disable live SSG for.
+#   excludedLocales:
+#     - "en-US"
+#   # The list of glob patterns to disable live SSG for.
+#   excludedContentGlobs:
+#     - "/admin/**"
+#   # The list of query parameters to disable live SSG for.
+#   excludedQueryParameters:
+#     - "no-cache"
+#   # The list of cookies to disable live SSG for.
+#   excludedCookies:
+#     - "no-cache"
+#   # The list of headers to disable live SSG for.
+#   excludedHeaders:
+#     - "no-cache"
+# # env:
+# # - variable: FIREBASE_CONFIG
+# #   value: '...'
+# # - variable: API_KEY
+# #   secret: my-secret
+# #   availability:
+# #     - BUILD
+# #     - RUNTIME
+# # automatedSecretDiscovery:
+# #   # Exclude secrets that begin with "test-".
+# #   - exclude: "test-*"
+# #   # Exclude a specific secret.
+# #   - exclude: "do-not-discover"
+# #   # Include a specific secret, even if it is excluded by other rules.
+# #   - include: "do-not-discover"
+# #     # The IAM roles to grant to the service account that accesses the secret.
+# #     roles:
+# #       - "secretmanager.secretAccessor"
+# #   # Include all secrets, but grant a specific set of IAM roles.
+# #   - include: "*"
+# #     roles:
+# #       - "secretmanager.secretAccessor"
+
+# vpc:
+#   # The ID of the VPC connector to use.
+#   connector: "my-vpc-connector"
+#   # The type of outbound traffic to send through the VPC connector.
+#   egress: "ALL_TRAFFIC"
+
+# customRoles:
+#   - role: "my-custom-role"
+#     permissions:
+#       - "storage.buckets.get"
+#       - "storage.objects.get"
+#       - "storage.objects.list"
+
+# serviceAccount: "my-service-account"
+# scheduler:
+#   # A list of jobs to run on a schedule.
+#   jobs:
+#     - name: "my-job"
+#       # A cron expression that specifies the schedule.
+#       schedule: "* * * * *"
+#       # The timezone to use for the schedule.
+#       timeZone: "America/Los_Angeles"
+#       # The HTTP method to use for the request.
+#       httpMethod: "GET"
+#       # The path to send the request to.
+#       httpPath: "/my-job"
+#       # The number of times to retry the job if it fails.
+#       retryCount: 3
+#       # The maximum amount of time to wait before retrying the job.
+#       maxRetrySeconds: 600
+#       # The minimum amount of time to wait before retrying the job.
+#       minBackoffSeconds: 60
+#       # The number of concurrent requests to send.
+#       maxDoublings: 5
+#       # The maximum amount of time to wait for a response.
+#       maxRunSeconds: 60
+#       # The oidc service account to use for the job.
+#       oidcServiceAccount: "my-service-account"
+#       # The oidc token audience to use for the job.
+#       oidcTokenAudience: "my-audience"
+#       # The headers to send with the request.
+#       headers:
+#         - key: "Content-Type"
+#           value: "application/json"
+#       # The body to send with the request.
+#       body: "{}"
+#       # The description of the job.
+#       description: "My job"
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+- rewrites:
+  - source: /**
+    destination: /index.html
